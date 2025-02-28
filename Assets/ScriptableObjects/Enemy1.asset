@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159a6beff55f01340bbde1f4b4326014, type: 3}
+  m_Name: Enemy1
+  m_EditorClassIdentifier: 
+  speed: 0
+  health: 0
+  AttackRange: 0
+  AttackSpeed: 0
+  AttackDamage: 
+  GFX: {fileID: 257875077840278798, guid: 32f6444ddf8bafa4d9402c349a25145c, type: 3}
