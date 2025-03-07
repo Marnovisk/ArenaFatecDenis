@@ -20,7 +20,6 @@ public class rotatePlayer : MonoBehaviour
     private void Update()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
         if (!Physics.Raycast(ray, out hit))
             return;
 
@@ -30,7 +29,6 @@ public class rotatePlayer : MonoBehaviour
             pos.y = 0;
 
         Quaternion rot = Quaternion.LookRotation(pos);
-
         turret.rotation = Quaternion.Lerp(turret.rotation, rot, velocity * Time.deltaTime);
     }
 }

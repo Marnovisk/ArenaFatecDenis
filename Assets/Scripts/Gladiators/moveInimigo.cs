@@ -22,13 +22,24 @@ public class moveInimigo : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, alvo.position) <= visao)
         {
-            agente.isStopped = false;
-            agente.SetDestination(alvo.position);
+            
+            MoveToAlvo(alvo);
         }
         else
         {
             agente.isStopped = true;
         }
 
+    }
+
+    void MoveToAlvo(Transform target)
+    {
+        agente.isStopped = false;
+        agente.SetDestination(target.position);
+    }
+
+    void PatrolMove()
+    {
+        
     }
 }
