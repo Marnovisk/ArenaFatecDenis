@@ -11,7 +11,7 @@ public class CameraBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        offset = new Vector3(0, 0.15f, -0.25f);
+        offset = new Vector3(0, 0.15f, 5f);
     }
 
     // Update is called once per frame
@@ -19,8 +19,9 @@ public class CameraBehaviour : MonoBehaviour
     {
         if(target)
         {
-            transform.position = target.position + offset;
-            transform.LookAt(target);
+            transform.position = target.position - offset;
+            transform.rotation = target.rotation;
+            //transform.LookAt(target);
         }
     }
 }
