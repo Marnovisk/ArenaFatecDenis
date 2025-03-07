@@ -23,7 +23,7 @@ public class playerAim : MonoBehaviour
     void Update()
     {
         MousePos = Input.mousePosition;
-        Debug.Log(MousePos);
+        
         
         //  ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -39,11 +39,14 @@ public class playerAim : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {        
-        //Vector3 LookAt = MousePos - transform.position;
+    {         
         float MouseYPos = MousePos.x - transform.position.x;
-        transform.rotation = Quaternion.Euler(0, MouseYPos, 0);
+        Quaternion rot = Quaternion.Euler(0, MouseYPos, 0);
+        float Sense = Time.deltaTime * velocity;
+        transform.rotation = Quaternion.Lerp(rot, transform.rotation, Sense);
+        Debug.Log(Sense);
+
+        //Vector3 LookAt = MousePos - transform.position;
         //Quaternion rot = Quaternion.LookRotation(LookAt);
-        //Quaternion.Lerp(transform.rotation, rot, velocity);
     }
 }

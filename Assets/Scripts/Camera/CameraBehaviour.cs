@@ -8,6 +8,7 @@ public class CameraBehaviour : MonoBehaviour
 {
     public Transform target;
     public Vector3 offset;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,8 @@ public class CameraBehaviour : MonoBehaviour
         if(target)
         {
             transform.position = target.position - offset;
-            transform.rotation = target.rotation;
-            //transform.LookAt(target);
+            //transform.rotation = target.rotation;
+            transform.LookAt(target.position + Vector3.up * 1.5f);
         }
     }
 }
