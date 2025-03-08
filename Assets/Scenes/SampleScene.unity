@@ -263,6 +263,10 @@ GameObject:
   - component: {fileID: 163640364}
   - component: {fileID: 163640366}
   - component: {fileID: 163640367}
+  - component: {fileID: 163640368}
+  - component: {fileID: 163640369}
+  - component: {fileID: 163640370}
+  - component: {fileID: 163640371}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -285,6 +289,7 @@ Transform:
   m_Children:
   - {fileID: 1870955884}
   - {fileID: 293222837}
+  - {fileID: 799183952}
   m_Father: {fileID: 181853376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &163640364
@@ -365,6 +370,79 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &163640368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163640362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f4407ec1a7d8e47bca2b597f2a28ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4467214033470054583, guid: 02e092f430851f54fa734a8f17645c6b, type: 3}
+  bulletSpawn: {fileID: 799183952}
+  bulletVida: 2
+  bulletSpeed: 6
+  bulletCooldown: 1
+--- !u!136 &163640369
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163640362}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &163640370
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163640362}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.08
+  m_Center: {x: 0, y: 0, z: 1}
+--- !u!114 &163640371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163640362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2adee6ee297c2499527a59528c7b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &181853375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,6 +1173,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4263102836984605473, guid: 56af10e247d706e4ea5ab04baae733fa, type: 3}
   m_PrefabInstance: {fileID: 1887165200}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &799183951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 799183952}
+  m_Layer: 0
+  m_Name: GunPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &799183952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799183951}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 163640363}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &824218187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4263102836984605473, guid: 56af10e247d706e4ea5ab04baae733fa, type: 3}
@@ -2129,6 +2238,14 @@ PrefabInstance:
     - target: {fileID: 8916789657362017956, guid: df51d1fb2dee4bd49af3b5527bcdfffc, type: 3}
       propertyPath: m_Name
       value: Gladiator
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916789657362017956, guid: df51d1fb2dee4bd49af3b5527bcdfffc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916789657362017956, guid: df51d1fb2dee4bd49af3b5527bcdfffc, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -44,7 +44,6 @@ public class playerAim : MonoBehaviour
         Quaternion rot = Quaternion.Euler(0, MouseYPos, 0);
         float Sense = Time.deltaTime * velocity;
         transform.rotation = Quaternion.Lerp(rot, transform.rotation, Sense);
-        Debug.Log(Sense);
 
         //Vector3 LookAt = MousePos - transform.position;
         //Quaternion rot = Quaternion.LookRotation(LookAt);
