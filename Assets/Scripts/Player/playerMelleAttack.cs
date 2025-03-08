@@ -34,4 +34,10 @@ public class playerMelleAttack : MonoBehaviour
         Debug.Log("Entrou Inimigos");
         enemy = other;
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(enemy == other)
+            enemy = null;
+    }
 }
